@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leave a review · Hack’s Plumbing &amp; Drain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .rev { max-width: 720px; margin: 1.4rem auto 2rem; padding: 0 var(--pad); }
+    .card { background: var(--paper); color: var(--black); border: 2px solid var(--yel); padding: 1.2rem; }
+    .card h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); margin: 0.3rem 0 0.6rem; }
+    .honest { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: #3d4246; border-top: 1px dashed #8a9088; margin-top: 0.9rem; padding-top: 0.7rem; }
+  </style>
+</head>
+<body>
+  <header class="wo-bar">
+    <div class="wo-inner">
+      <a class="wm" href="index.html">Hack’s <span>Plumbing &amp; Drain</span></a>
+      <div class="tools">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+        </div>
+        <a class="btn yel" href="index.html" data-i18n="back">Back to work order</a>
+      </div>
+    </div>
+  </header>
+  <main class="rev">
+    <div class="card">
+      <p class="banner" style="margin:-1.2rem -1.2rem 1rem" data-i18n="kicker">After the jet</p>
+      <h1 data-i18n="h1">The original site does not print a Google review URL.</h1>
+      <p data-i18n="lede">hacksplumbinganddrain.com names Sean, Estevan, Cesar, and Hack in customer notes. It also claims hundreds of 5-star local reviews. This page will not mint a Maps short-link. Search the shop if you want to add yours.</p>
+      <ol>
+        <li data-i18n="s1">Search “Hack’s Plumbing & Drain San Diego”.</li>
+        <li data-i18n="s2">Match the shop that answers (858) 326-2860.</li>
+        <li data-i18n="s3">Name the tech if you remember — Sean, Estevan, Cesar, Hack, or whoever was on the ticket.</li>
+      </ol>
+      <p class="honest" data-i18n="honest">No license number is printed on the original site, so none is printed here. Dummy 0+ counters from that theme are omitted on purpose.</p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+  <script>
+    I18N.en.back = "Back to work order";
+    I18N.en.kicker = "After the jet";
+    I18N.en.h1 = "The original site does not print a Google review URL.";
+    I18N.en.lede = "hacksplumbinganddrain.com names Sean, Estevan, Cesar, and Hack in customer notes. It also claims hundreds of 5-star local reviews. This page will not mint a Maps short-link. Search the shop if you want to add yours.";
+    I18N.en.s1 = "Search “Hack’s Plumbing & Drain San Diego”.";
+    I18N.en.s2 = "Match the shop that answers (858) 326-2860.";
+    I18N.en.s3 = "Name the tech if you remember — Sean, Estevan, Cesar, Hack, or whoever was on the ticket.";
+    I18N.en.honest = "No license number is printed on the original site, so none is printed here. Dummy 0+ counters from that theme are omitted on purpose.";
+    I18N.es.back = "Volver a la orden";
+    I18N.es.kicker = "Después del jet";
+    I18N.es.h1 = "El sitio original no imprime una URL de reseñas de Google.";
+    I18N.es.lede = "hacksplumbinganddrain.com nombra a Sean, Estevan, Cesar y Hack en notas de clientes. También habla de cientos de reseñas locales de 5 estrellas. Esta página no inventa un enlace de Maps. Busque el taller si quiere añadir la suya.";
+    I18N.es.s1 = "Busque “Hack’s Plumbing & Drain San Diego”.";
+    I18N.es.s2 = "Confirme el taller que contesta al (858) 326-2860.";
+    I18N.es.s3 = "Nombre al técnico si lo recuerda — Sean, Estevan, Cesar, Hack, o quien haya ido.";
+    I18N.es.honest = "El sitio original no imprime número de licencia, así que aquí tampoco. Los contadores dummy 0+ de esa plantilla se omiten a propósito.";
+    try {
+      const saved = localStorage.getItem(LANG_KEY);
+      if (saved === "es" || saved === "en") setLang(saved);
+    } catch (_) {}
+  </script>
+</body>
+</html>
