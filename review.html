@@ -9,10 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .rev { max-width: 720px; margin: 1.4rem auto 2rem; padding: 0 var(--pad); }
+    .rev { max-width: 520px; margin: 1.4rem auto 2rem; padding: 0 var(--pad); }
     .card { background: var(--paper); color: var(--black); border: 2px solid var(--yel); padding: 1.2rem; }
-    .card h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); margin: 0.3rem 0 0.6rem; }
-    .honest { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: #3d4246; border-top: 1px dashed #8a9088; margin-top: 0.9rem; padding-top: 0.7rem; }
+    .card h1 { font-size: clamp(1.4rem, 4vw, 1.9rem); margin: 0 0 0.4rem; }
+    .card img.qr { width: 220px; height: 220px; display: block; margin: 0.9rem auto; background: #fff; }
+    .scan { text-align: center; }
+    .actions { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 1rem; }
+    @media print {
+      .wo-bar, .tools, .lang, .actions { display: none !important; }
+      html, body { background: #fff; }
+    }
   </style>
 </head>
 <body>
@@ -30,35 +36,28 @@
   </header>
   <main class="rev">
     <div class="card">
-      <p class="banner" style="margin:-1.2rem -1.2rem 1rem" data-i18n="kicker">After the jet</p>
-      <h1 data-i18n="h1">The original site does not print a Google review URL.</h1>
-      <p data-i18n="lede">hacksplumbinganddrain.com names Sean, Estevan, Cesar, and Hack in customer notes. It also claims hundreds of 5-star local reviews. This page will not mint a Maps short-link. Search the shop if you want to add yours.</p>
-      <ol>
-        <li data-i18n="s1">Search “Hack’s Plumbing & Drain San Diego”.</li>
-        <li data-i18n="s2">Match the shop that answers (858) 326-2860.</li>
-        <li data-i18n="s3">Name the tech if you remember — Sean, Estevan, Cesar, Hack, or whoever was on the ticket.</li>
-      </ol>
-      <p class="honest" data-i18n="honest">No license number is printed on the original site, so none is printed here. Dummy 0+ counters from that theme are omitted on purpose.</p>
+      <h1>Hack’s Plumbing &amp; Drain</h1>
+      <p>San Diego County · <a href="tel:+18583262860">(858) 326-2860</a></p>
+      <img class="qr" src="review-qr.svg" width="220" height="220" alt="QR code: Google search for Hack’s Plumbing &amp; Drain San Diego">
+      <p class="scan" data-i18n="scan">Scan to find us on Google and leave a review.</p>
+      <div class="actions">
+        <button type="button" class="btn yel" id="print-card" data-i18n="printBtn">Print</button>
+        <a class="btn ghost" href="index.html" data-i18n="back2">Back to work order</a>
+      </div>
     </div>
   </main>
   <script src="script.js"></script>
   <script>
     I18N.en.back = "Back to work order";
-    I18N.en.kicker = "After the jet";
-    I18N.en.h1 = "The original site does not print a Google review URL.";
-    I18N.en.lede = "hacksplumbinganddrain.com names Sean, Estevan, Cesar, and Hack in customer notes. It also claims hundreds of 5-star local reviews. This page will not mint a Maps short-link. Search the shop if you want to add yours.";
-    I18N.en.s1 = "Search “Hack’s Plumbing & Drain San Diego”.";
-    I18N.en.s2 = "Match the shop that answers (858) 326-2860.";
-    I18N.en.s3 = "Name the tech if you remember — Sean, Estevan, Cesar, Hack, or whoever was on the ticket.";
-    I18N.en.honest = "No license number is printed on the original site, so none is printed here. Dummy 0+ counters from that theme are omitted on purpose.";
+    I18N.en.back2 = "Back to work order";
+    I18N.en.scan = "Scan to find us on Google and leave a review.";
+    I18N.en.printBtn = "Print";
+    I18N.en.docTitle = "Leave a review · Hack’s Plumbing & Drain";
     I18N.es.back = "Volver a la orden";
-    I18N.es.kicker = "Después del jet";
-    I18N.es.h1 = "El sitio original no imprime una URL de reseñas de Google.";
-    I18N.es.lede = "hacksplumbinganddrain.com nombra a Sean, Estevan, Cesar y Hack en notas de clientes. También habla de cientos de reseñas locales de 5 estrellas. Esta página no inventa un enlace de Maps. Busque el taller si quiere añadir la suya.";
-    I18N.es.s1 = "Busque “Hack’s Plumbing & Drain San Diego”.";
-    I18N.es.s2 = "Confirme el taller que contesta al (858) 326-2860.";
-    I18N.es.s3 = "Nombre al técnico si lo recuerda — Sean, Estevan, Cesar, Hack, o quien haya ido.";
-    I18N.es.honest = "El sitio original no imprime número de licencia, así que aquí tampoco. Los contadores dummy 0+ de esa plantilla se omiten a propósito.";
+    I18N.es.back2 = "Volver a la orden";
+    I18N.es.scan = "Escanee para encontrarnos en Google y dejar una reseña.";
+    I18N.es.printBtn = "Imprimir";
+    I18N.es.docTitle = "Dejar reseña · Hack’s Plumbing & Drain";
     try {
       const saved = localStorage.getItem(LANG_KEY);
       if (saved === "es" || saved === "en") setLang(saved);
