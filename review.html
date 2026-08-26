@@ -6,55 +6,45 @@
   <title>Leave a review · Hack’s Plumbing &amp; Drain</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .rev { max-width: 520px; margin: 1.4rem auto 2rem; padding: 0 var(--pad); }
-    .card { background: var(--paper); color: var(--black); border: 2px solid var(--yel); padding: 1.2rem; }
-    .card h1 { font-size: clamp(1.4rem, 4vw, 1.9rem); margin: 0 0 0.4rem; }
+    .rev { max-width: 520px; margin: 2rem auto; padding: 0 1rem; }
+    .card { background: var(--paper); border: 2px solid var(--ink); padding: 1.2rem; position: relative; z-index: 2; }
+    .card h1 { font-size: clamp(1.4rem, 4vw, 1.9rem); margin: 0.4rem 0; }
     .card img.qr { width: 220px; height: 220px; display: block; margin: 0.9rem auto; background: #fff; }
     .scan { text-align: center; }
     .actions { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 1rem; }
     @media print {
-      .wo-bar, .tools, .lang, .actions { display: none !important; }
+      .lang, .actions { display: none !important; }
       html, body { background: #fff; }
     }
   </style>
 </head>
 <body>
-  <header class="wo-bar">
-    <div class="wo-inner">
-      <a class="wm" href="index.html">Hack’s <span>Plumbing &amp; Drain</span></a>
-      <div class="tools">
-        <div class="lang" role="group" aria-label="Language">
-          <button type="button" data-lang="en" aria-pressed="true">EN</button>
-          <button type="button" data-lang="es" aria-pressed="false">ES</button>
-        </div>
-        <a class="btn yel" href="index.html" data-i18n="back">Back to work order</a>
-      </div>
-    </div>
-  </header>
   <main class="rev">
     <div class="card">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
       <h1>Hack’s Plumbing &amp; Drain</h1>
       <p>San Diego County · <a href="tel:+18583262860">(858) 326-2860</a></p>
       <img class="qr" src="review-qr.svg" width="220" height="220" alt="QR code: Google search for Hack’s Plumbing &amp; Drain San Diego">
       <p class="scan" data-i18n="scan">Scan to find us on Google and leave a review.</p>
       <div class="actions">
         <button type="button" class="btn yel" id="print-card" data-i18n="printBtn">Print</button>
-        <a class="btn ghost" href="index.html" data-i18n="back2">Back to work order</a>
+        <a class="btn ghost" href="index.html" data-i18n="back">Back to the work order</a>
       </div>
     </div>
   </main>
   <script src="script.js"></script>
   <script>
-    I18N.en.back = "Back to work order";
-    I18N.en.back2 = "Back to work order";
+    I18N.en.back = "Back to the work order";
     I18N.en.scan = "Scan to find us on Google and leave a review.";
     I18N.en.printBtn = "Print";
     I18N.en.docTitle = "Leave a review · Hack’s Plumbing & Drain";
     I18N.es.back = "Volver a la orden";
-    I18N.es.back2 = "Volver a la orden";
     I18N.es.scan = "Escanee para encontrarnos en Google y dejar una reseña.";
     I18N.es.printBtn = "Imprimir";
     I18N.es.docTitle = "Dejar reseña · Hack’s Plumbing & Drain";
