@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip" href="#sign">Skip to kitchen authorization</a>
+  <a class="skip" href="#sign">Skip to estimate</a>
 
   <div class="ncr">
-    <i class="copy pink" aria-hidden="true">KITCHEN FILE</i>
-    <i class="copy canary" aria-hidden="true">SHOP FILE</i>
+    <i class="copy pink" aria-hidden="true">CUSTOMER COPY</i>
+    <i class="copy canary" aria-hidden="true">SHOP COPY</i>
 
     <article class="wo">
       <p class="winter" data-i18n="winter">Winter Special $100 OFF Any Invoice Over $1,000</p>
@@ -67,7 +67,7 @@
             <dd data-i18n="s6b">From 30-gallon home water heaters to commercial boilers, we repair and replace them all at affordable rates.</dd>
           </div>
         </dl>
-        <p class="more" data-i18n="more">Also leaking faucets, clogged drains, water heater installation, and emergency repairs. Free, no-obligation estimates. One call for repairs, installations, drain clearing, gas lines, hydro jetting, emergency plumbing.</p>
+        <p class="more" data-i18n="more">Also leak detection, sewer lines, repipe, septic line locating, shower valves, toilets, tankless water heaters, garbage disposals. Free, no-obligation estimates.</p>
       </section>
 
       <section class="jobs">
@@ -100,8 +100,8 @@
       </section>
 
       <section class="sign" id="sign">
-        <h2 data-i18n="jobT">Kitchen / property authorization</h2>
-        <p data-i18n="jobLede">Sign by text. Name and need required. Address is for the house call. Submit opens a text to (858) 326-2860.</p>
+        <h2 data-i18n="jobT">Request estimate</h2>
+        <p data-i18n="jobLede">Name and need required. Address is for the house call. Submit opens a text to (858) 326-2860.</p>
         <form id="sms-form" action="sms:+18583262860" method="get">
           <label>
             <span data-i18n="fName">Name</span>
@@ -118,7 +118,12 @@
               <option value="Gas line" data-i18n="need5">Gas line</option>
               <option value="Water heater" data-i18n="need6">Water heater</option>
               <option value="Emergency plumbing" data-i18n="need7">Emergency plumbing</option>
-              <option value="Other plumbing" data-i18n="need8">Other plumbing</option>
+              <option value="Leak detection" data-i18n="need8">Leak detection</option>
+              <option value="Sewer / septic" data-i18n="need9">Sewer / septic line locating</option>
+              <option value="Repipe" data-i18n="need10">Repipe</option>
+              <option value="Toilets / shower valves" data-i18n="need11">Toilets / shower valves</option>
+              <option value="Tankless water heater" data-i18n="need12">Tankless water heater</option>
+              <option value="Garbage disposal" data-i18n="need13">Garbage disposal</option>
             </select>
           </label>
           <label class="wide">
@@ -127,9 +132,9 @@
           </label>
           <label class="wide">
             <span data-i18n="fMsg">Details (optional)</span>
-            <textarea name="details" rows="3" data-i18n-placeholder="phMsg" placeholder="Kitchen floor drain, HOA, restaurant…"></textarea>
+            <textarea name="details" rows="3" data-i18n-placeholder="phMsg" placeholder="Drain, hydro jet, water heater…"></textarea>
           </label>
-          <p class="sigline" data-i18n="sig">X ________________________________ kitchen / property</p>
+          <p class="sigline" data-i18n="sig">X ________________________________</p>
           <button type="submit" class="btn yel" data-i18n="fSend">Text the work order</button>
         </form>
         <p class="alt">
