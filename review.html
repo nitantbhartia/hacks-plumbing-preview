@@ -1,57 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Leave a review · Hack’s Plumbing &amp; Drain</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+  <title>Review card — Hack’s Plumbing &amp; Drain</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    .rev { max-width: 520px; margin: 2rem auto; padding: 0 1rem; }
-    .card { background: var(--paper); border: 2px solid var(--ink); padding: 1.2rem; position: relative; z-index: 2; }
-    .card h1 { font-size: clamp(1.4rem, 4vw, 1.9rem); margin: 0.4rem 0; }
-    .card img.qr { width: 220px; height: 220px; display: block; margin: 0.9rem auto; background: #fff; }
-    .scan { text-align: center; }
-    .actions { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 1rem; }
-    @media print {
-      .lang, .actions { display: none !important; }
-      html, body { background: #fff; }
-    }
+    .printc { max-width: 5.05in; margin: 1.1rem auto; background: #f4f1ea; padding: 1rem; border: 1px solid #c8c2b6; }
+    .printc h1 { font-family: "Pathway Gothic One", "Arial Narrow", sans-serif; font-size: 1.6rem; margin: 0 0 0.25rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .printc img { width: 200px; height: 200px; display: block; margin: 0.6rem auto; background: #fff; }
+    .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .actions button, .actions a { background: #9a2a16; color: #f4f1ea; border: 0; padding: 0.45rem 0.65rem; text-decoration: none; cursor: pointer; font-family: "Spline Sans Mono", ui-monospace, monospace; }
+    @media print { .lang, .actions { display: none !important; } body { background: #fff; } }
   </style>
 </head>
 <body>
-  <main class="rev">
-    <div class="card">
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-lang="es" aria-pressed="false">ES</button>
-      </div>
-      <h1>Hack’s Plumbing &amp; Drain</h1>
-      <p>San Diego County · <a href="tel:+18583262860">(858) 326-2860</a></p>
-      <img class="qr" src="review-qr.svg" width="220" height="220" alt="QR code: Google search for Hack’s Plumbing &amp; Drain San Diego">
-      <p class="scan" data-i18n="scan">Scan to find us on Google and leave a review.</p>
-      <div class="actions">
-        <button type="button" class="btn yel" id="print-card" data-i18n="printBtn">Print</button>
-        <a class="btn ghost" href="index.html" data-i18n="back">Home</a>
-      </div>
+  <article class="printc">
+    <nav class="lang" aria-label="Language">
+      <button type="button" data-set="en" aria-pressed="true">EN</button>
+      <button type="button" data-set="es" aria-pressed="false">ES</button>
+    </nav>
+    <h1>Hack’s Plumbing &amp; Drain</h1>
+    <p>San Diego County · <a class="plain" href="tel:+18583262860">(858) 326-2860</a></p>
+    <p><a class="plain" href="mailto:workorders@hacksplumbing.com">workorders@hacksplumbing.com</a></p>
+    <img src="review-qr.svg" width="200" height="200" alt="QR code to find Hack’s Plumbing &amp; Drain on Google">
+    <p data-en="Scan to find us on Google and leave a review." data-es="Escanee para encontrarnos en Google y dejar una reseña.">Scan to find us on Google and leave a review.</p>
+    <div class="actions">
+      <button type="button" id="print-card" data-en="Print this card" data-es="Imprimir esta tarjeta">Print this card</button>
+      <a href="index.html" data-en="Back to the mailer" data-es="Volver al sobre">Back to the mailer</a>
     </div>
-  </main>
+  </article>
   <script src="script.js"></script>
-  <script>
-    I18N.en.back = "Home";
-    I18N.en.scan = "Scan to find us on Google and leave a review.";
-    I18N.en.printBtn = "Print";
-    I18N.en.docTitle = "Leave a review · Hack’s Plumbing & Drain";
-    I18N.es.back = "Inicio";
-    I18N.es.scan = "Escanee para encontrarnos en Google y dejar una reseña.";
-    I18N.es.printBtn = "Imprimir";
-    I18N.es.docTitle = "Dejar reseña · Hack’s Plumbing & Drain";
-    try {
-      const saved = localStorage.getItem(LANG_KEY);
-      if (saved === "es" || saved === "en") setLang(saved);
-    } catch (_) {}
-  </script>
 </body>
 </html>
