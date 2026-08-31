@@ -6,40 +6,28 @@
   <title>Review card — Hack’s Plumbing &amp; Drain</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    .card {
-      width: min(calc(100% - 1.2rem), 5.05in);
-      margin: 0.85rem auto 1.6rem;
-      background: #d8d4c8;
-      border: 1px solid #141414;
-      padding: 0.85rem 0.8rem 1rem;
-    }
-    .card h1 { font-family: Graduate, "Times New Roman", serif; font-size: 1.15rem; margin: 0.25rem 0; font-weight: 400; }
-    .card img { width: 200px; height: 200px; display: block; margin: 0.5rem auto; background: #fff; }
-    .actions { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.55rem; }
-    .actions button, .actions a {
-      background: #141414; color: #f3e27a; border: 0; padding: 0.4rem 0.6rem;
-      text-decoration: none; cursor: pointer; font-family: "Fragment Mono", ui-monospace, monospace;
-    }
-    @media print {
-      .lang, .actions { display: none !important; }
-      body { background: #fff; }
-    }
+    .printc { max-width: 5.05in; margin: 1.1rem auto; background: #f4f1ea; padding: 1rem; border: 1px solid #c8c2b6; }
+    .printc h1 { font-family: "Pathway Gothic One", "Arial Narrow", sans-serif; font-size: 1.6rem; margin: 0 0 0.25rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .printc img { width: 200px; height: 200px; display: block; margin: 0.6rem auto; background: #fff; }
+    .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .actions button, .actions a { background: #9a2a16; color: #f4f1ea; border: 0; padding: 0.45rem 0.65rem; text-decoration: none; cursor: pointer; font-family: "Spline Sans Mono", ui-monospace, monospace; }
+    @media print { .lang, .actions { display: none !important; } body { background: #fff; } }
   </style>
 </head>
 <body>
-  <article class="card">
+  <article class="printc">
     <nav class="lang" aria-label="Language">
       <button type="button" data-set="en" aria-pressed="true">EN</button>
       <button type="button" data-set="es" aria-pressed="false">ES</button>
     </nav>
     <h1>Hack’s Plumbing &amp; Drain</h1>
-    <p data-en="San Diego County · family-owned" data-es="Condado de San Diego · de familia">San Diego County · family-owned</p>
-    <p><a class="plain" href="tel:+18583262860">(858) 326-2860</a></p>
+    <p>San Diego County · <a class="plain" href="tel:+18583262860">(858) 326-2860</a></p>
+    <p><a class="plain" href="mailto:workorders@hacksplumbing.com">workorders@hacksplumbing.com</a></p>
     <img src="review-qr.svg" width="200" height="200" alt="QR code to find Hack’s Plumbing &amp; Drain on Google">
     <p data-en="Scan to find us on Google and leave a review." data-es="Escanee para encontrarnos en Google y dejar una reseña.">Scan to find us on Google and leave a review.</p>
     <div class="actions">
       <button type="button" id="print-card" data-en="Print this card" data-es="Imprimir esta tarjeta">Print this card</button>
-      <a href="index.html" data-en="Back to the print" data-es="Volver a la impresión">Back to the print</a>
+      <a href="index.html" data-en="Back to the mailer" data-es="Volver al sobre">Back to the mailer</a>
     </div>
   </article>
   <script src="script.js"></script>
