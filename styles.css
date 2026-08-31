@@ -1,210 +1,206 @@
-/* Hack’s NCR grease-trap / hydro-jet work order. Titillium Web + Courier Prime. */
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Pathway+Gothic+One&family=Spline+Sans+Mono:wght@500;700&display=swap");
 
 :root {
   --ink: #1c1a16;
-  --mute: #5a564c;
-  --paper: #fbf8ee;
-  --canary: #f3e27a;
-  --pink: #f0c1c8;
-  --yel: #c9a227;
-  --counter: #2a2620;
+  --paper: #f4f1ea;
+  --disc: #d8d2c4;
+  --stamp: #9a2a16;
+  --amber: #c45a12;
+  --post: #4a5560;
 }
 
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; background: var(--counter); }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
 body {
-  margin: 0;
-  font-family: "Titillium Web", "Segoe UI", sans-serif;
+  min-height: 100vh;
   color: var(--ink);
+  font-family: "Crimson Text", Georgia, serif;
   background:
-    repeating-linear-gradient(90deg, #2f2a24 0 14px, #26221c 14px 28px);
-  line-height: 1.45;
-  font-size: 1.04rem;
+    radial-gradient(ellipse at 50% 0, #6a7380 0 24%, transparent 70%),
+    repeating-linear-gradient(90deg, #4a5560 0 14px, #44505a 14px 15px);
 }
+
 a { color: inherit; }
-h1, h2 { margin: 0; font-weight: 700; letter-spacing: -0.02em; }
-p { margin: 0; }
+a.plain { text-underline-offset: 2px; }
+button, input, textarea { font-family: inherit; }
 
-.skip {
-  position: absolute; left: 0.7rem; top: -3rem;
-  background: var(--yel); color: var(--ink); padding: 0.4rem 0.7rem;
-}
-.skip:focus { top: 0.5rem; }
-
-.ncr {
+.mailer {
   position: relative;
-  max-width: 840px;
-  margin: 2.4rem auto 2.4rem;
-}
-.copy {
-  position: absolute;
-  left: 10px;
-  right: -10px;
-  height: 100%;
-  font-family: "Courier Prime", monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 0.4rem 0.7rem;
-}
-.copy.pink { background: var(--pink); top: 16px; transform: rotate(1.1deg); z-index: 0; }
-.copy.canary { background: var(--canary); top: 8px; transform: rotate(0.5deg); z-index: 1; }
-
-.wo {
-  position: relative;
-  z-index: 2;
+  max-width: 5.05in;
+  margin: 0.85rem auto 1.4rem;
+  padding: 0.85rem 0.75rem 0.65rem;
   background: var(--paper);
-  border: 1px solid #2a2620;
-  padding: 0 0 0.6rem;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  border: 1px solid #c8c2b6;
+  box-shadow:
+    0 0 0 1px #eeeae2,
+    0 16px 28px #0006;
 }
 
+.perf {
+  position: absolute;
+  top: 0; right: 0;
+  margin: 0;
+  padding: 0.15rem 0.4rem;
+  font-family: "Spline Sans Mono", ui-monospace, monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.14em;
+  background: #1c1a16;
+  color: var(--paper);
+}
 .winter {
-  background: var(--canary);
-  text-align: center;
-  font-family: "Courier Prime", monospace;
+  margin: 0 0 0.45rem;
+  display: inline-block;
+  font-family: "Pathway Gothic One", "Arial Narrow", sans-serif;
   font-size: 0.82rem;
-  letter-spacing: 0.04em;
-  padding: 0.45rem 0.8rem;
-  border-bottom: 1px dashed #2a2620;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 2px solid var(--amber);
+  padding: 0.12rem 0.4rem;
+  transform: rotate(-1.5deg);
 }
 
-.wo-head {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 1rem;
-  padding: 1rem 1.2rem 0.8rem;
-  border-bottom: 2px solid var(--ink);
+.disc {
+  position: relative;
+  background:
+    radial-gradient(circle at 50% 45%, #eeeae0 0 18%, var(--disc) 42%, #b8b09e 100%);
+  border-radius: 50%;
+  width: 4.55in;
+  height: 4.55in;
+  max-width: 100%;
+  margin: 0 auto 0.55rem;
+  padding: 1.15rem 0.85rem 0.7rem;
+  text-align: center;
+  box-shadow: inset 0 0 0 10px #cfc8b8, 0 0 0 2px #9a9486;
 }
-.kind {
-  font-family: "Courier Prime", monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+.hub {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 0.7rem; height: 0.7rem;
+  margin: -0.35rem 0 0 -0.35rem;
+  border-radius: 50%;
+  background: #1c1a16;
+  box-shadow: 0 0 0 6px #e8e2d4;
+  opacity: 0.35;
+}
+.co {
+  margin: 0;
+  font-family: "Pathway Gothic One", "Arial Narrow", sans-serif;
+  font-size: 1.85rem;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
   text-transform: uppercase;
-  color: var(--mute);
 }
-h1 { font-size: clamp(1.8rem, 4.2vw, 2.5rem); }
-.sub { color: var(--mute); margin-top: 0.2rem; }
-.head-right { text-align: right; }
-.lang { display: inline-flex; border: 1px solid var(--ink); margin-bottom: 0.35rem; }
-.lang button {
-  background: transparent; border: 0;
-  font-family: "Courier Prime", monospace;
-  font-size: 0.75rem;
-  padding: 0.15rem 0.45rem;
-  cursor: pointer;
+.disc h1 {
+  margin: 0.3rem auto 0.2rem;
+  max-width: 22ch;
+  font-size: 0.92rem;
+  font-weight: 600;
 }
-.lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.sub { margin: 0 0 0.25rem; font-size: 0.78rem; }
 .phone {
-  display: block;
-  font-family: "Courier Prime", monospace;
+  display: inline-block;
+  font-family: "Spline Sans Mono", ui-monospace, monospace;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 0.95rem;
+  color: var(--stamp);
   text-decoration: none;
 }
-.hours { font-size: 0.82rem; color: var(--mute); margin-top: 0.25rem; }
-
-.lede, .scope, .jobs, .notes, .values, .sign { padding: 0.95rem 1.2rem; }
-.lede { max-width: 62ch; }
-
-h2 {
-  font-size: 1.05rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-family: "Courier Prime", monospace;
-  margin-bottom: 0.45rem;
-  border-bottom: 1px solid #d4cbb3;
-  padding-bottom: 0.25rem;
+.lang { display: flex; justify-content: flex-end; gap: 0.2rem; }
+.lang button {
+  background: transparent;
+  border: 1px solid #1c1a1688;
+  color: var(--ink);
+  padding: 0.08rem 0.35rem;
+  cursor: pointer;
+  font-family: "Spline Sans Mono", ui-monospace, monospace;
+  font-size: 0.66rem;
+}
+.lang button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
 }
 
-.scope dl { margin: 0; }
-.scope dl > div {
-  display: grid;
-  grid-template-columns: 11rem 1fr;
-  gap: 0.6rem;
-  padding: 0.45rem 0;
-  border-bottom: 1px dotted #b7ae96;
-}
-.scope dt { font-weight: 700; }
-.scope dd { margin: 0; }
-.more { margin-top: 0.7rem; color: var(--mute); font-size: 0.95rem; }
-
-.jobs ul { margin: 0; padding-left: 1.1rem; }
-.jobs li { margin: 0.2rem 0; }
-
-.notes blockquote {
-  margin: 0.55rem 0 0;
-  padding: 0.55rem 0 0.15rem;
-  border-top: 1px solid #d4cbb3;
-  font-size: 0.96rem;
-}
-.notes footer {
-  margin-top: 0.35rem;
-  font-family: "Courier Prime", monospace;
-  font-size: 0.82rem;
+.lede, .also { margin: 0 0 0.3rem; font-size: 0.8rem; line-height: 1.3; }
+.hours {
+  margin: 0 0 0.4rem;
+  font-family: "Spline Sans Mono", ui-monospace, monospace;
+  font-size: 0.68rem;
 }
 
-.values ul { margin: 0; padding-left: 1.1rem; color: var(--mute); font-size: 0.95rem; }
-
-.sign {
-  background: #fff;
-  margin: 0 0.8rem 0.8rem;
-  border: 2px solid var(--ink);
-}
-.sign form {
+.chapters {
+  margin: 0 0 0.35rem;
+  padding: 0;
+  list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.6rem 0.8rem;
-  margin-top: 0.6rem;
+  gap: 0.12rem 0.5rem;
+  font-family: "Pathway Gothic One", "Arial Narrow", sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  counter-reset: ch;
 }
-.sign label { display: grid; gap: 0.15rem; }
-.sign label span {
-  font-family: "Courier Prime", monospace;
-  font-size: 0.75rem;
+.chapters li { border-bottom: 1px solid #1c1a1622; padding: 0.08rem 0; }
+
+form {
+  background: #ece6da;
+  border: 1px dashed #1c1a16;
+  padding: 0.45rem 0.5rem 0.5rem;
+}
+.fill {
+  margin: 0 0 0.25rem;
+  font-family: "Spline Sans Mono", ui-monospace, monospace;
+  font-size: 0.58rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--mute);
 }
-.sign input, .sign select, .sign textarea {
-  font: inherit;
+label {
+  display: block;
+  font-family: "Spline Sans Mono", ui-monospace, monospace;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  margin: 0.16rem 0 0.04rem;
+}
+input, textarea {
+  width: 100%;
   border: 0;
   border-bottom: 1px solid var(--ink);
   background: transparent;
-  padding: 0.3rem 0;
-  border-radius: 0;
+  padding: 0.12rem 0;
+  font-size: 0.85rem;
+  resize: vertical;
 }
-.sign .wide, .sign button, .sigline { grid-column: 1 / -1; }
-.sigline {
-  font-family: "Courier Prime", monospace;
-  font-size: 0.95rem;
-  margin: 0.4rem 0 0.2rem;
+form button {
+  margin-top: 0.4rem;
+  width: 100%;
+  background: var(--stamp);
+  color: var(--paper);
+  border: 0;
+  padding: 0.45rem 0.4rem;
+  cursor: pointer;
+  font-family: "Pathway Gothic One", "Arial Narrow", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.hint { margin: 0.25rem 0 0; font-size: 0.72rem; color: var(--stamp); }
+
+.sill {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  font-size: 0.68rem;
+  text-align: center;
 }
 
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  text-decoration: none; border: 0; cursor: pointer;
-  font-family: "Courier Prime", monospace;
-  font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase;
-  padding: 0.55rem 0.9rem; font-weight: 700;
+@media (max-width: 420px) {
+  .mailer { margin: 0.5rem 0.4rem 1rem; }
+  .disc { width: auto; height: auto; border-radius: 8px; }
 }
-.btn.yel { background: var(--canary); color: var(--ink); border: 1px solid var(--ink); }
-.btn.ghost { background: transparent; border: 1px solid var(--ink); }
-
-.alt { margin-top: 0.6rem; font-size: 0.9rem; }
-.alt a { color: var(--mute); }
-
-.foot {
-  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
-  padding: 0.7rem 1.2rem 0.9rem;
-  border-top: 2px solid var(--ink);
-  font-size: 0.86rem;
-}
-.foot-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
-
-@media (max-width: 760px) {
-  .ncr { margin: 1.4rem 0.55rem 1.6rem; }
-  .wo-head, .scope dl > div, .sign form { grid-template-columns: 1fr; }
-  .head-right { text-align: left; }
+@media print {
+  body { background: #fff; }
+  .lang { display: none !important; }
+  .mailer { box-shadow: none; margin: 0; }
 }
