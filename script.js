@@ -6,7 +6,7 @@
     root.lang = lang;
     document.querySelectorAll("[data-en]").forEach(function (el) {
       var v = el.getAttribute("data-" + lang);
-      if (v != null) el.innerHTML = v;
+      if (v != null) el.textContent = v;
     });
     document.querySelectorAll("[data-en-placeholder]").forEach(function (el) {
       var v = el.getAttribute("data-" + lang + "-placeholder");
@@ -33,7 +33,7 @@
       var err = document.getElementById("job-err");
       if (!name || !need || !address) { if (err) err.hidden = false; return; }
       if (err) err.hidden = true;
-      var body = "Hack's Plumbing & Drain\nName: " + name + "\nAddress: " + address + "\nNeed: " + need;
+      var body = "Hack's Plumbing house call\nName: " + name + "\nAddress: " + address + "\nNeed: " + need;
       window.location.href = "sms:" + PHONE + "?body=" + encodeURIComponent(body);
     });
   }
